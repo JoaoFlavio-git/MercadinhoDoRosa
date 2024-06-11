@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ApiDoMercadinho.Models.Mercado>
+
+@{
+    ViewData["Title"] = "Lista de Mercados";
+}
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+
+<p>
+    <a type="button" class="btn btn-success" asp-action="Create">Adicionar Mercado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Preco)</th>
+            <th>@Html.DisplayNameFor(model => model.Estoque)</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Preco)</td>
+                <td>@Html.DisplayFor(modelItem => item.Estoque)</td>
+                <td>
+                    <a type="button" class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a type="button" class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    <a type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

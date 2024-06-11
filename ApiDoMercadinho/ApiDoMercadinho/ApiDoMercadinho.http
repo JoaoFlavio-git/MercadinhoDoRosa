@@ -1,0 +1,6 @@
+@ApiDoMercadinho_HostAddress = http://localhost:5113
+
+GET {{ApiDoMercadinho_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
